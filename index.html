@@ -20,14 +20,26 @@ From working in customer service and hardware support to tackling network engine
 
 When I’m not diving into tech, you’ll find me trading stocks, exploring Linux fundamentals, or studying new cybersecurity concepts. Every project I take on is an opportunity to learn, innovate, and make an impact in the digital world.</p>
         </section>
-        <section>
-            <h2>Projects</h2>
-            <ul>
-                <li><a href="#">Vulnerability Scanner Tool</a></li>
-                <li><a href="#">Lottery Number Analyzer</a></li>
-                <li><a href="#">Evil Twin Attack Simulation</a></li>
-            </ul>
-        </section>
+       <section id="projects">
+    <h2>Projects</h2>
+    <div class="tabs">
+        <button class="tablinks" onclick="openProject(event, 'VulnerabilityScanner')">Vulnerability Scanner</button>
+        <button class="tablinks" onclick="openProject(event, 'LotteryTool')">Lottery Tool</button>
+    </div>
+    <div id="VulnerabilityScanner" class="tabcontent">
+        <h3>Vulnerability Scanner</h3>
+        <img src="vulnerability-scanner-image.jpg" alt="Vulnerability Scanner" style="width:100%; max-width: 500px;">
+        <p>This is a tool that scans websites for common vulnerabilities, helping web administrators secure their sites.</p>
+        <p>Features include scanning for SQL injection, XSS vulnerabilities, and more.</p>
+    </div>
+
+    <div id="LotteryTool" class="tabcontent">
+        <h3>Lottery Tool</h3>
+        <img src="lottery-tool-image.jpg" alt="Lottery Tool" style="width:100%; max-width: 500px;">
+        <p>This tool extracts lottery results from PDFs, identifies repeating number patterns, and helps users analyze results.</p>
+        <p>It's built using Python and Kali Linux for efficient data extraction and pattern analysis.</p>
+    </div>
+</section>
         <section>
             <h2>Contact</h2>
             <p>Email: sreelalnet@gmail.com</p>
