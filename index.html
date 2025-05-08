@@ -56,17 +56,19 @@
 
     
      <script>
-        const countKey = 'page_view_count';
-        let count = localStorage.getItem(countKey);
-        count = count ? parseInt(count) + 1 : 1;
-        localStorage.setItem(countKey, count);
-
-        const counterDisplay = document.createElement('p');
-        counterDisplay.textContent = `Visitor count: ${count}`;
-        counterDisplay.style.textAlign = 'center';
-        counterDisplay.style.marginTop = '20px';
-        document.body.appendChild(counterDisplay);
-    </script>
+    if (!localStorage.getItem('hasVisited')) {
+        let count = localStorage.getItem('visitCount') || 0;
+        count++;
+        localStorage.setItem('visitCount', count);
+        localStorage.setItem('hasVisited', 'true');
+    }
+    document.addEventListener("DOMContentLoaded", function() {
+        let count = localStorage.getItem('visitCount') || 0;
+        const counterElement = document.createElement('p');
+        counterElement.textContent = "Total Visits (local): " + count;
+        document.querySelector("body").appendChild(counterElement);
+    });
+</script>
 </body>
 </html>
 
