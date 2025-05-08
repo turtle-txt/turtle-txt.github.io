@@ -23,23 +23,30 @@ Outside of work, I’m immersed in learning Linux fundamentals, exploring cybers
        <section id="projects">
     <h2>Projects</h2>
     <div class="tabs">
+        <button class="tablinks" onclick="openProject(event, 'NetworkDesign')">Network Design</button>
         <button class="tablinks" onclick="openProject(event, 'VulnerabilityScanner')">Vulnerability Scanner</button>
         <button class="tablinks" onclick="openProject(event, 'LotteryTool')">Lottery Tool</button>
     </div>
-    <div id="VulnerabilityScanner" class="tabcontent">
-        <h3>Vulnerability Scanner</h3>
-        <img src="https://github.com/turtle-txt/turtle-txt.github.io/blob/main/that.png?raw=true" alt="Vulnerability Scanner" style="width:100%; max-width: 500px;">
-        <p>This is a tool that scans websites for common vulnerabilities, helping web administrators secure their sites.</p>
-        <p>Features include scanning for SQL injection, XSS vulnerabilities, and more.</p>
-    </div>
 
-    <div id="LotteryTool" class="tabcontent">
-        <h3>Lottery Tool</h3>
-        <img src="https://github.com/turtle-txt/turtle-txt.github.io/blob/main/lottery%20tool.png?raw=true" alt="Lottery Tool" style="width:100%; max-width: 500px;">
-        <p>This tool extracts lottery results from PDFs, identifies repeating number patterns, and helps users analyze results.</p>
-        <p>It's built using Python and Kali Linux for efficient data extraction and pattern analysis.</p>
-    </div>
-</section>
+             <div id="NetworkDesign" class="tabcontent">
+                <h3>Enterprise Network Design</h3>
+                <img src="https://github.com/turtle-txt/turtle-txt.github.io/blob/main/network_design.png?raw=true" alt="Network Design" style="width:100%; max-width: 500px;">
+                <p>This design simulates an enterprise network using Cisco Packet Tracer, featuring multi-VLAN configuration, OSPF routing, DHCP relay, and ACLs for traffic control across multiple international office locations.</p>
+            </div>
+           
+            <div id="LotteryTool" class="tabcontent">
+                <h3>Lottery Tool</h3>
+                <img src="https://github.com/turtle-txt/turtle-txt.github.io/blob/main/lottery%20tool.png?raw=true" alt="Lottery Tool" style="width:100%; max-width: 500px;">
+                <p>This tool analyzes lottery PDFs to identify number patterns and trends using Python and data parsing techniques in Kali Linux.</p>
+            </div>
+
+             <div id="VulnerabilityScanner" class="tabcontent">
+                <h3>Vulnerability Scanner</h3>
+                <img src="https://github.com/turtle-txt/turtle-txt.github.io/blob/main/that.png?raw=true" alt="Vulnerability Scanner" style="width:100%; max-width: 500px;">
+                <p>A tool that scans websites for common vulnerabilities including SQL injection and XSS, helping administrators secure their applications.</p>
+            </div>
+        </section>
+        
         <section>
             <h2>Contact</h2>
             <p>Email: sreelalnet@gmail.com</p>
@@ -50,5 +57,20 @@ Outside of work, I’m immersed in learning Linux fundamentals, exploring cybers
 <button id="backToTop" onclick="scrollToTop()" style="display:none; position: fixed; bottom: 20px; right: 20px; background-color: #0073e6; color: white; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer;">
     ↑ Back to Top
 </button>
+
+    
+     <script>
+        const countKey = 'page_view_count';
+        let count = localStorage.getItem(countKey);
+        count = count ? parseInt(count) + 1 : 1;
+        localStorage.setItem(countKey, count);
+
+        const counterDisplay = document.createElement('p');
+        counterDisplay.textContent = `Visitor count: ${count}`;
+        counterDisplay.style.textAlign = 'center';
+        counterDisplay.style.marginTop = '20px';
+        document.body.appendChild(counterDisplay);
+    </script>
 </body>
 </html>
+
