@@ -1,59 +1,89 @@
-
+// --- Smooth Scrolling for Internal Links ---
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
         e.preventDefault();
-        document.querySelector(this.getAttribute('href')).scrollIntoView({
-            behavior: 'smooth'
-        });
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+            target.scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
+            });
+        }
     });
 });
 
+// --- Dynamic Typewriter Effect ---
+const roles = [
+    "IT Support Engineer",
+    "Network Infrastructure Specialist",
+    "Cybersecurity & PenTest Enthusiast",
+    "CCNA Certified"
+];
 
-window.onscroll = function () {
-    showBackToTopButton();
-};
+let roleIndex = 0;
+let charIndex = 0;
+let isDeleting = false;
+const typeSpeed = 100;
+const deleteSpeed = 50;
+const waitTime = 2000;
+const typewriterEl = document.getElementById("typewriter");
 
-function showBackToTopButton() {
-    let backToTopButton = document.getElementById("backToTop");
-    if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
-        backToTopButton.style.display = "block";
+function typeEffect() {
+    const currentRole = roles[roleIndex];
+    
+    if (isDeleting) {
+        typewriterEl.textContent = currentRole.substring(0, charIndex - 1);
+        charIndex--;
     } else {
-        backToTopButton.style.display = "none";
+        typewriterEl.textContent = currentRole.substring(0, charIndex + 1);
+        charIndex++;
     }
+
+    if (!isDeleting && charIndex === currentRole.length) {
+        isDeleting = true;
+        setTimeout(typeEffect, waitTime);
+        return;
+    } else if (isDeleting && charIndex === 0) {
+        isDeleting = false;
+        roleIndex = (roleIndex + 1) % roles.length;
+    }
+
+    setTimeout(typeEffect, isDeleting ? deleteSpeed : typeSpeed);
 }
 
+// --- Back to Top Button ---
+window.addEventListener('scroll', () => {
+    const backToTopBtn = document.getElementById("backToTop");
+    if (window.scrollY > 300) {
+        backToTopBtn.style.display = "block";
+    } else {
+        backToTopBtn.style.display = "none";
+    }
+});
 
 function scrollToTop() {
-    document.body.scrollTop = 0;
-    document.documentElement.scrollTop = 0;
-}
-
-
-window.addEventListener('load', function () {
-    let sections = document.querySelectorAll('section');
-    sections.forEach((section, index) => {
-        setTimeout(() => {
-            section.style.opacity = 1;
-            section.style.transition = "opacity 1s ease";
-        }, index * 500);
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
     });
-});
-function openProject(evt, projectName) {
-
-    let tabcontent = document.getElementsByClassName("tabcontent");
-    for (let i = 0; i < tabcontent.length; i++) {
-        tabcontent[i].style.display = "none";
-    }
-
-
-    let tablinks = document.getElementsByClassName("tablinks");
-    for (let i = 0; i < tablinks.length; i++) {
-        tablinks[i].classList.remove("active");
-    }
-
-  
-    document.getElementById(projectName).style.display = "block";
-    evt.currentTarget.classList.add("active");
 }
 
-document.getElementsByClassName("tablinks")[0].click();
+// --- Visitor Counter (Preserving your original feature) ---
+function initCounter() {
+    let count = parseInt(localStorage.getItem('visitCount')) || 0;
+    if (!sessionStorage.getItem('sessionCounted')) {
+        count++;
+        localStorage.setItem('visitCount', count);
+        sessionStorage.setItem('sessionCounted', 'true');
+    }
+    const counterDisplay = document.getElementById('local-counter');
+    if (counterDisplay) {
+        counterDisplay.textContent = `[Session telemetry: ${count} local visits logged]`;
+    }
+}
+
+// --- Initialize On Load ---
+document.addEventListener("DOMContentLoaded", () => {
+    typeEffect();
+    initCounter();
+});
