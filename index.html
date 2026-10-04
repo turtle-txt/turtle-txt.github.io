@@ -3,72 +3,355 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio - Sreelal Ramadas</title>
+    <title>Sreelal Ramadas | IT Support & Cybersecurity</title>
+    <meta name="description" content="Portfolio of Sreelal Ramadas - IT Support Engineer & Network/Cybersecurity Specialist based in Dubai, UAE.">
+    
+    <!-- Fonts & Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600&family=Plus+Jakarta+Sans:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
-        <h1>Welcome to My Portfolio</h1>
-        <p>Cybersecurity Enthusiast| Network Engineer | Novice Python Programmer | Linux Advocate</p>
+    <div class="glow-bg"></div>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <a href="#home" class="logo"><span class="terminal-prefix">&gt;</span> sreelal.dev</a>
+        <div class="nav-links">
+            <a href="#about">About</a>
+            <a href="#skills">Skills</a>
+            <a href="#experience">Experience</a>
+            <a href="#projects">Projects</a>
+            <a href="#contact" class="btn-nav">Contact</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header id="home" class="hero section">
+        <div class="container hero-container">
+            <div class="hero-content">
+                <div class="badge-status">
+                    <span class="status-pulse"></span> Available for Opportunities in Dubai & Global
+                </div>
+                <h1>Hi, I'm <span class="gradient-text">Sreelal Ramadas</span></h1>
+                <h2 class="dynamic-subtitle"><span id="typewriter"></span><span class="cursor">|</span></h2>
+                <p class="hero-desc">
+                    Bridging IT infrastructure, hands-on networking, and ethical hacking fundamentals. Currently delivering end-user and backend support at Dutco Group while pursuing an MCA in Cybersecurity.
+                </p>
+                <div class="hero-actions">
+                    <a href="#projects" class="btn btn-primary"><i class="fa-solid fa-code-branch"></i> View Work</a>
+                    <a href="mailto:sreelalnet@gmail.com" class="btn btn-secondary"><i class="fa-regular fa-envelope"></i> Get in Touch</a>
+                </div>
+                <div class="social-strip">
+                    <a href="https://linkedin.com/in/sreelal-ramadas-529218311" target="_blank" title="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+                    <a href="https://github.com/turtle-txt" target="_blank" title="GitHub"><i class="fa-brands fa-github"></i></a>
+                    <a href="mailto:sreelalnet@gmail.com" title="Email"><i class="fa-solid fa-at"></i></a>
+                    <span class="location-tag"><i class="fa-solid fa-location-dot"></i> Dubai, UAE</span>
+                </div>
+            </div>
+
+            <!-- Terminal Component -->
+            <div class="hero-terminal">
+                <div class="terminal-header">
+                    <span class="dot red"></span>
+                    <span class="dot yellow"></span>
+                    <span class="dot green"></span>
+                    <span class="terminal-title">bash - sreelal@dutco-security</span>
+                </div>
+                <div class="terminal-body">
+                    <p><span class="t-prompt">sreelal@kali:~$</span> whoami</p>
+                    <p class="t-output">IT Support Engineer & Cybersecurity Researcher</p>
+                    <p><span class="t-prompt">sreelal@kali:~$</span> cat core_certifications.txt</p>
+                    <p class="t-output">✔ Cisco CCNA (Routing & Switching)<br>✔ Cisco Intro to Cybersecurity<br>✔ MCA Cybersecurity (Ongoing)</p>
+                    <p><span class="t-prompt">sreelal@kali:~$</span> netstat -tuln | grep ACTIVE</p>
+                    <p class="t-output highlight-green">tcp 0 0 127.0.0.1:SUPPORT - 99.9% UPTIME ACTIVE</p>
+                    <p><span class="t-prompt">sreelal@kali:~$</span> <span class="blink">_</span></p>
+                </div>
+            </div>
+        </div>
     </header>
+
     <main>
-        <section>
-            <h2>About Me</h2>
-            <p>I am a Network Engineer with a strong interest in cybersecurity and infrastructure optimization. I specialize in configuring and troubleshooting network devices, managing VLANs, DHCP, VPNs, and implementing secure routing protocols. I also explore security vulnerabilities using tools in Kali Linux and scripts developed in Python, continuously expanding my knowledge in real-world threat analysis and defense.</p>
+        <!-- About Section -->
+        <section id="about" class="section">
+            <div class="container">
+                <h2 class="section-title"><i class="fa-solid fa-user-astronaut"></i> Background</h2>
+                <div class="card glass-card about-grid">
+                    <div>
+                        <p>
+                            IT Support Engineer with hands-on experience spanning enterprise end-user support, system deployments, Microsoft 365, and robust network infrastructures across the UAE and India.
+                        </p>
+                        <p>
+                            At <strong>Dutco Group</strong>, I coordinate multi-site end-user support, 4G/5G enterprise routers, VPN remote access, switch management, and first-line cybersecurity escalations against phishing and endpoint vulnerabilities.
+                        </p>
+                        <div class="mini-stats-grid">
+                            <div class="mini-stat">
+                                <h3>99.9%</h3>
+                                <p>Network Uptime Maintained</p>
+                            </div>
+                            <div class="mini-stat">
+                                <h3>30%</h3>
+                                <p>Downtime Reduction Achieved</p>
+                            </div>
+                            <div class="mini-stat">
+                                <h3>Global</h3>
+                                <p>Multi-Site Remote Support</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </section>
-       <section id="projects">
-    <h2>Projects</h2>
-    <div class="tabs">
-        <button class="tablinks" onclick="openProject(event, 'NetworkDesign')">Network Design</button>
-        <button class="tablinks" onclick="openProject(event, 'VulnerabilityScanner')">Vulnerability Scanner</button>
-        <button class="tablinks" onclick="openProject(event, 'LotteryTool')">Lottery Tool</button>
-    </div>
 
-             <div id="NetworkDesign" class="tabcontent">
-                <h3>Enterprise Network Design</h3>
-                <img src="network.png" alt="Network Design" style="width:100%; max-width: 500px;">
-                <p>This design simulates an enterprise network using Cisco Packet Tracer, featuring multi-VLAN configuration, OSPF routing, DHCP relay, and ACLs for traffic control across multiple international office locations.</p>
-            </div>
-           
-            <div id="LotteryTool" class="tabcontent">
-                <h3>Lottery Tool</h3>
-                <img src="https://github.com/turtle-txt/turtle-txt.github.io/blob/main/lottery%20tool.png?raw=true" alt="Lottery Tool" style="width:100%; max-width: 500px;">
-                <p>This tool analyzes lottery PDFs to identify number patterns and trends using Python and data parsing techniques in Kali Linux.</p>
-            </div>
+        <!-- Skills Section -->
+        <section id="skills" class="section">
+            <div class="container">
+                <h2 class="section-title"><i class="fa-solid fa-microchip"></i> Core Competencies</h2>
+                <div class="skills-grid">
+                    <div class="card glass-card skill-group">
+                        <h3><i class="fa-solid fa-shield-halved"></i> Cybersecurity</h3>
+                        <div class="tags">
+                            <span>Vulnerability Assessment</span>
+                            <span>Endpoint Protection</span>
+                            <span>Phishing Escalation</span>
+                            <span>Kali Linux</span>
+                            <span>ACLs & Firewalls</span>
+                            <span>Evil Twin Defense</span>
+                        </div>
+                    </div>
 
-             <div id="VulnerabilityScanner" class="tabcontent">
-                <h3>Vulnerability Scanner</h3>
-                <img src="https://github.com/turtle-txt/turtle-txt.github.io/blob/main/that.png?raw=true" alt="Vulnerability Scanner" style="width:100%; max-width: 500px;">
-                <p>A tool that scans websites for common vulnerabilities including SQL injection and XSS, helping administrators secure their applications.</p>
+                    <div class="card glass-card skill-group">
+                        <h3><i class="fa-solid fa-network-wired"></i> Network Infrastructure</h3>
+                        <div class="tags">
+                            <span>Cisco CCNA (R&S)</span>
+                            <span>VLANs & Trunks</span>
+                            <span>OSPF / EIGRP / BGP</span>
+                            <span>4G / 5G Routers</span>
+                            <span>VPN & Remote Access</span>
+                            <span>Ruckus Cloud Wi-Fi</span>
+                        </div>
+                    </div>
+
+                    <div class="card glass-card skill-group">
+                        <h3><i class="fa-solid fa-headset"></i> IT Support & Cloud</h3>
+                        <div class="tags">
+                            <span>Microsoft 365 / Entra ID</span>
+                            <span>ManageEngine ServiceDesk</span>
+                            <span>Dameware Support</span>
+                            <span>Windows Deployments / SSD</span>
+                            <span>Primavera & Autodesk</span>
+                            <span>AWS (Basics)</span>
+                        </div>
+                    </div>
+
+                    <div class="card glass-card skill-group">
+                        <h3><i class="fa-solid fa-terminal"></i> Tools & Scripting</h3>
+                        <div class="tags">
+                            <span>Python Scripting</span>
+                            <span>Linux CLI</span>
+                            <span>SQL (Foundations)</span>
+                            <span>CCTV & DVR Systems</span>
+                            <span>Cisco Packet Tracer</span>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
-        
-        <section>
-            <h2>Contact</h2>
-            <p>Email: sreelalnet@gmail.com</p>
-            <p>GitHub: <a href="https://turtle-txt.github.io">github.com/turtle-txt.github.io</a></p>
+
+        <!-- Experience Timeline -->
+        <section id="experience" class="section">
+            <div class="container">
+                <h2 class="section-title"><i class="fa-solid fa-briefcase"></i> Experience & Career</h2>
+                <div class="timeline">
+                    
+                    <div class="timeline-item">
+                        <div class="timeline-marker"></div>
+                        <div class="card glass-card timeline-content">
+                            <span class="timeline-date">Jul 2025 – Present</span>
+                            <h3>IT Support Engineer</h3>
+                            <h4>Dutco Group &bull; Dubai, UAE</h4>
+                            <ul>
+                                <li>Supporting global multi-location project teams with enterprise software, hardware, and network access.</li>
+                                <li>Managing 4G/5G site routers, switch provisions, VPNs, and LAN stability.</li>
+                                <li>Administering Microsoft 365 (Teams, Outlook, OneDrive) and incident response via ManageEngine.</li>
+                                <li>Triaging and mitigating phishing attempts, endpoint issues, and compliance policies.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-marker"></div>
+                        <div class="card glass-card timeline-content">
+                            <span class="timeline-date">Sep 2023 – Feb 2024</span>
+                            <h3>Network Support Engineer</h3>
+                            <h4>Safe Line Group of Companies &bull; Dubai, UAE</h4>
+                            <ul>
+                                <li>Maintained network infrastructure with 99.9% uptime and reduced recurring downtime by 30%.</li>
+                                <li>Delivered 20% faster issue resolution through structured vendor coordination.</li>
+                                <li>Implemented rigorous CCTV maintenance standards, dropping surveillance downtime by 40%.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-marker"></div>
+                        <div class="card glass-card timeline-content">
+                            <span class="timeline-date">Sep 2021 – Dec 2022</span>
+                            <h3>Hardware & Network Support</h3>
+                            <h4>Live Computer Sales & Service &bull; India</h4>
+                            <ul>
+                                <li>Component-level diagnostics, hardware repairs, and Ethernet terminations.</li>
+                                <li>Deployment of DVR/CCTV systems and custom small-office network layouts.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-marker"></div>
+                        <div class="card glass-card timeline-content">
+                            <span class="timeline-date">Aug 2019 – May 2021</span>
+                            <h3>Station Supervisor</h3>
+                            <h4>Amazon India &bull; India</h4>
+                            <ul>
+                                <li>Led operations team, yielding a 95% safety improvement and 90% faster processing cycles.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="section">
+            <div class="container">
+                <h2 class="section-title"><i class="fa-solid fa-diagram-project"></i> Practical Projects</h2>
+                <div class="projects-grid">
+                    
+                    <!-- Project 1 -->
+                    <div class="card glass-card project-card">
+                        <div class="project-img-wrapper">
+                            <img src="network.png" alt="Enterprise Network Design">
+                        </div>
+                        <div class="project-info">
+                            <h3>Enterprise Network Architecture</h3>
+                            <p>Multi-VLAN topology simulated via Cisco Packet Tracer with OSPF routing, DHCP relay redundancy, and granular ACL policies simulating cross-border enterprise offices.</p>
+                            <div class="tags">
+                                <span>Cisco</span>
+                                <span>Packet Tracer</span>
+                                <span>OSPF</span>
+                                <span>ACLs</span>
+                                <span>VLANs</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 2 -->
+                    <div class="card glass-card project-card">
+                        <div class="project-img-wrapper">
+                            <img src="that.png" alt="Vulnerability Scanner">
+                        </div>
+                        <div class="project-info">
+                            <h3>Web Vulnerability Scanner</h3>
+                            <p>Automated security utility designed to inspect endpoints for common web application weaknesses including SQL Injection vectors, unescaped XSS injections, and insecure headers.</p>
+                            <div class="tags">
+                                <span>Python</span>
+                                <span>Kali Linux</span>
+                                <span>SQLi / XSS</span>
+                                <span>AppSec</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 3 -->
+                    <div class="card glass-card project-card">
+                        <div class="project-img-wrapper">
+                            <img src="lottery tool.png" alt="Lottery Pattern Parser">
+                        </div>
+                        <div class="project-info">
+                            <h3>Lottery Data Parser & Analyzer</h3>
+                            <p>Automated data extraction tool leveraging Python scripts on Kali Linux to parse unstructured PDF publications, aggregate historical figures, and trace recurring patterns.</p>
+                            <div class="tags">
+                                <span>Python</span>
+                                <span>Data Parsing</span>
+                                <span>Automation</span>
+                                <span>Regex</span>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Education & Certifications -->
+        <section id="education" class="section">
+            <div class="container">
+                <h2 class="section-title"><i class="fa-solid fa-graduation-cap"></i> Education & Certs</h2>
+                <div class="edu-grid">
+                    <div class="card glass-card">
+                        <h3>MCA in Cybersecurity</h3>
+                        <p class="edu-sub">Manipal University &bull; Ongoing</p>
+                        <p>Specializing in advanced endpoint defense, network security mechanisms, and digital forensics.</p>
+                    </div>
+                    <div class="card glass-card">
+                        <h3>Industry Certifications</h3>
+                        <ul class="cert-list">
+                            <li><i class="fa-solid fa-certificate"></i> Cisco CCNA (Routing & Switching)</li>
+                            <li><i class="fa-solid fa-shield"></i> Cisco Introduction to Cybersecurity</li>
+                            <li><i class="fa-solid fa-id-card"></i> Valid UAE Driving License</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="section">
+            <div class="container">
+                <div class="card glass-card contact-card">
+                    <h2>Ready to elevate your IT operations & security?</h2>
+                    <p>I am open to discussions regarding IT Support, Network Management, and Cybersecurity roles.</p>
+                    
+                    <div class="contact-links-grid">
+                        <a href="mailto:sreelalnet@gmail.com" class="contact-item">
+                            <i class="fa-solid fa-envelope"></i>
+                            <span>sreelalnet@gmail.com</span>
+                        </a>
+                        <a href="tel:+971555933729" class="contact-item">
+                            <i class="fa-solid fa-phone"></i>
+                            <span>+971 55 593 3729</span>
+                        </a>
+                        <a href="https://linkedin.com/in/sreelal-ramadas-529218311" target="_blank" class="contact-item">
+                            <i class="fa-brands fa-linkedin"></i>
+                            <span>LinkedIn Profile</span>
+                        </a>
+                        <a href="https://github.com/turtle-txt" target="_blank" class="contact-item">
+                            <i class="fa-brands fa-github"></i>
+                            <span>github.com/turtle-txt</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
         </section>
     </main>
-<script src="script.js"></script>
-<button id="backToTop" onclick="scrollToTop()" style="display:none; position: fixed; bottom: 20px; right: 20px; background-color: #0073e6; color: white; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer;">
-    ↑ Back to Top
-</button>
 
-    
-     <script>
-    if (!localStorage.getItem('hasVisited')) {
-        let count = localStorage.getItem('visitCount') || 0;
-        count++;
-        localStorage.setItem('visitCount', count);
-        localStorage.setItem('hasVisited', 'true');
-    }
-    document.addEventListener("DOMContentLoaded", function() {
-        let count = localStorage.getItem('visitCount') || 0;
-        const counterElement = document.createElement('p');
-        counterElement.textContent = "Total Visits (local): " + count;
-        document.querySelector("body").appendChild(counterElement);
-    });
-</script>
+    <!-- Footer -->
+    <footer>
+        <div class="container footer-content">
+            <p>&copy; 2026 Sreelal Ramadas. Crafted with HTML5, CSS Grid & JavaScript.</p>
+            <p id="local-counter" class="footer-counter"></p>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button id="backToTop" onclick="scrollToTop()" title="Back to top">
+        <i class="fa-solid fa-arrow-up"></i>
+    </button>
+
+    <script src="script.js"></script>
 </body>
 </html>
-
